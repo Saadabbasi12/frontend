@@ -1,70 +1,93 @@
-# Getting Started with Create React App
+Overview
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+TalentSage is a recruiter-focused frontend application designed to demonstrate modern hiring workflows enhanced with AI-assisted features.
+The project focuses on clean architecture, predictable state management, and realistic recruiter UX, rather than backend or AI model implementation.
 
-## Available Scripts
+This repository represents the frontend engineering task submission and showcases best practices in React application design.
 
-In the project directory, you can run:
 
-### `npm start`
+Goals of the Project
+Simulate a real-world recruiter workflow
+Demonstrate scalable frontend architecture
+Maintain trust and transparency in AI-assisted actions
+Ensure predictable UI state transitions
+Provide clean documentation and test coverage
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Key Features
+Job pipeline with candidate stage management
+Candidate profile with:
+Skills overview
+Resume preview
+Video screening workflow
+AI screening summary
+Evaluation rubric editor
+Full audit log for recruiter and AI actions
+AI assistant (UI + state simulation)
+Smooth UI animations with performance awareness
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Tech Stack
 
-### `npm run build`
+React (Create React App)
+Redux Toolkit – state management
+React Router DOM – routing
+Tailwind CSS – styling
+Framer Motion – animations
+Jest + React Testing Library – testing
+GitHub – version control
+Vercel – deployment
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Setup Instructions
+1️⃣ Clone the repository
+git clone <your-repository-url>
+cd frontend
+2️⃣ Install dependencies
+npm install
+3️⃣ Run the application locally
+npm start
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The app will run at:
 
-### `npm run eject`
+http://localhost:3000
+🏗️ Build for Production
+npm run build
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+This creates an optimized production build in the build/ folder.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Setup Instructions
+1️⃣ Clone the repository
+git clone <your-repository-url>
+cd frontend
+2️⃣ Install dependencies
+npm install
+3️⃣ Run the application locally
+npm start
 
-## Learn More
+The app will run at:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+http://localhost:3000
+🏗️ Build for Production
+npm run build
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+The project includes minimum required test coverage as per task requirements.
 
-### Code Splitting
+Covered Scenarios
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Core workflow behavior
+Candidate stage update reflects in UI state
+Rubric logic
+Rubric updates correctly via reducer
+Assistant behavior
+Assistant open/close state toggles correctly
+Note: 1 test failed because of version incompatibility no issue in the test 
+This creates an optimized production build in the build/ folder.
+use Run Test for running 
+Press a to run all tests
+Press q to exit
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
