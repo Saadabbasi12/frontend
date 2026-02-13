@@ -5,7 +5,7 @@ const assistantSlice = createSlice({
   initialState: {
     isOpen: false,
     messages: [],
-    status: "idle", // idle | thinking | speaking | listening
+    status: "idle", 
   },
   reducers: {
     toggleAssistant: (state) => {
