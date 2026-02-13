@@ -10,11 +10,11 @@ export default function Counter({ value, label }) {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting && !hasStarted) {
-            setHasStarted(true); 
+            setHasStarted(true);
           }
         });
       },
-      { threshold: 0.5 } 
+      { threshold: 0.5 },
     );
 
     if (ref.current) {
@@ -31,7 +31,7 @@ export default function Counter({ value, label }) {
 
     let start = 0;
     const end = value;
-    const duration = 2000; 
+    const duration = 2000;
     const stepTime = 30;
     const increment = Math.ceil(end / (duration / stepTime));
 
@@ -49,10 +49,7 @@ export default function Counter({ value, label }) {
   }, [hasStarted, value]);
 
   return (
-    <div
-      ref={ref}
-      className="p-6 bg-white rounded-xl shadow-sm text-center"
-    >
+    <div ref={ref} className="p-6 bg-white rounded-xl shadow-sm text-center">
       <p className="text-4xl font-bold text-blue-600">{count}%</p>
       <p className="mt-2 text-gray-600 text-sm">{label}</p>
     </div>

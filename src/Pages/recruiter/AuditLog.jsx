@@ -12,18 +12,15 @@ export default function AuditLog({ logs }) {
     const prevIds = prevIdsRef.current;
     const currIds = logs.map((l) => l.id);
 
-    // Only consider additions after initial mount
     if (prevIds.length > 0) {
       const added = currIds.filter((id) => !prevIds.includes(id));
       if (added.length > 0) {
-        // add to highlighted set
         setHighlightedIds((prev) => {
           const s = new Set(prev);
           added.forEach((id) => s.add(id));
           return s;
         });
 
-        // show tooltip badge with count
         setNewCount(added.length);
         setShowNewTooltip(true);
         if (tooltipTimerRef.current) clearTimeout(tooltipTimerRef.current);
@@ -31,7 +28,6 @@ export default function AuditLog({ logs }) {
           setShowNewTooltip(false);
         }, 6000);
 
-        // remove highlight after 4s for each added log
         added.forEach((id) => {
           setTimeout(() => {
             setHighlightedIds((prev) => {
@@ -62,14 +58,13 @@ export default function AuditLog({ logs }) {
       });
     }
     setShowNewTooltip(false);
-    setHighlightedIds(new Set()); // clear highlights when user views
+    setHighlightedIds(new Set());
   };
 
   return (
     <div className="p-4 border rounded-lg">
       <h3 className="font-semibold mb-4">Activity Timeline</h3>
 
-      {/* scrollable container with fixed max height */}
       <div className="relative">
         {showNewTooltip && (
           <div className="absolute right-3 top-2 z-10">

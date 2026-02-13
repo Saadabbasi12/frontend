@@ -5,9 +5,7 @@ export default function RubricEditor({ rubric, onSave }) {
 
   const updateItem = (id, field, value) => {
     setLocalRubric((prev) =>
-      prev.map((r) =>
-        r.id === id ? { ...r, [field]: value } : r
-      )
+      prev.map((r) => (r.id === id ? { ...r, [field]: value } : r)),
     );
   };
 
@@ -20,9 +18,7 @@ export default function RubricEditor({ rubric, onSave }) {
           <input
             className="border px-2 py-1 flex-1"
             value={item.label}
-            onChange={(e) =>
-              updateItem(item.id, "label", e.target.value)
-            }
+            onChange={(e) => updateItem(item.id, "label", e.target.value)}
           />
           <input
             type="number"

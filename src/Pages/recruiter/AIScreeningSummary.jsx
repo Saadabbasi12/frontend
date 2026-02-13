@@ -9,7 +9,7 @@ export default function AIScreeningSummary() {
       </h2>
 
       <div className="space-y-6">
-        {/* Overall Assessment */}
+       
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
@@ -44,7 +44,7 @@ export default function AIScreeningSummary() {
           </div>
         </motion.div>
 
-        {/* Areas for Development */}
+       
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
@@ -61,7 +61,7 @@ export default function AIScreeningSummary() {
           </div>
         </motion.div>
 
-        {/* Recommendation */}
+       
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}

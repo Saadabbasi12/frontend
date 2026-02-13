@@ -7,7 +7,7 @@ export default function VideoScreening({ onSubmit }) {
   const [notes, setNotes] = useState("");
   const [submitted, setSubmitted] = useState(false);
 
-  // Create video URL only once (prevents UI shaking)
+  
   useEffect(() => {
     if (!video) {
       setVideoUrl(null);
@@ -29,14 +29,14 @@ export default function VideoScreening({ onSubmit }) {
       notes,
     });
 
-    setSubmitted(true); // ✅ lock submission
+    setSubmitted(true); 
   };
 
   return (
     <div className="p-4 border rounded-lg mt-6 transition-all bg-white">
       <h3 className="font-semibold mb-3">Video Screening</h3>
 
-      {/* Upload */}
+     
       <input
         type="file"
         accept="video/*"
@@ -45,16 +45,12 @@ export default function VideoScreening({ onSubmit }) {
         className="mb-3 disabled:opacity-60"
       />
 
-      {/* Preview */}
+      
       {videoUrl && (
-        <video
-          controls
-          src={videoUrl}
-          className="w-full rounded mb-3"
-        />
+        <video controls src={videoUrl} className="w-full rounded mb-3" />
       )}
 
-      {/* Decision */}
+    
       <div className="flex gap-3 mb-3">
         {["Pass", "Hold", "Reject"].map((d) => (
           <button
@@ -75,7 +71,7 @@ export default function VideoScreening({ onSubmit }) {
         ))}
       </div>
 
-      {/* Notes */}
+     
       <textarea
         placeholder="Recruiter notes..."
         value={notes}
@@ -87,7 +83,7 @@ export default function VideoScreening({ onSubmit }) {
         rows={3}
       />
 
-      {/* Submit / Submitted */}
+     
       {!submitted ? (
         <button
           disabled={!video || !decision}

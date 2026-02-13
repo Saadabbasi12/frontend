@@ -38,7 +38,7 @@ export default function JobDetails() {
           {job.title}
         </h1>
 
-        {/* ================= PIPELINE ================= */}
+        
         <div className="grid md:grid-cols-4 gap-6">
           {stages.map((stage) => (
             <div
@@ -97,7 +97,7 @@ export default function JobDetails() {
           ))}
         </div>
 
-        {/* ================= RUBRIC + AUDIT ================= */}
+      
         <div className="grid md:grid-cols-2 gap-6 mt-10">
           <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300">
             <h2 className="text-2xl font-bold mb-4 text-gray-700 flex items-center gap-2">

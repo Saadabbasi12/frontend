@@ -14,7 +14,7 @@ export default function CandidateProfile() {
   const dispatch = useDispatch();
 
   const job = useSelector((state) =>
-    state.recruiter.jobs.find((j) => j.id === jobId)
+    state.recruiter.jobs.find((j) => j.id === jobId),
   );
 
   const candidate = job?.candidates.find((c) => c.id === id);
@@ -30,8 +30,6 @@ export default function CandidateProfile() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 p-8">
       <div className="max-w-5xl mx-auto">
-        
-        {/* ================= HEADER ================= */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -47,12 +45,17 @@ export default function CandidateProfile() {
                   Candidate Profile
                 </p>
               </div>
-              <span className={`px-4 py-2 rounded-full font-semibold text-sm whitespace-nowrap ${
-                candidate.stage === "Shortlisted" ? "bg-green-100 text-green-700" :
-                candidate.stage === "Interview" ? "bg-blue-100 text-blue-700" :
-                candidate.stage === "Offer" ? "bg-purple-100 text-purple-700" :
-                "bg-gray-100 text-gray-700"
-              }`}>
+              <span
+                className={`px-4 py-2 rounded-full font-semibold text-sm whitespace-nowrap ${
+                  candidate.stage === "Shortlisted"
+                    ? "bg-green-100 text-green-700"
+                    : candidate.stage === "Interview"
+                      ? "bg-blue-100 text-blue-700"
+                      : candidate.stage === "Offer"
+                        ? "bg-purple-100 text-purple-700"
+                        : "bg-gray-100 text-gray-700"
+                }`}
+              >
                 {candidate.stage}
               </span>
             </div>
@@ -64,7 +67,6 @@ export default function CandidateProfile() {
           </div>
         </motion.div>
 
-        {/* ================= SKILLS ================= */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -90,7 +92,6 @@ export default function CandidateProfile() {
           </div>
         </motion.div>
 
-        {/* ================= RESUME PREVIEW ================= */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -104,13 +105,13 @@ export default function CandidateProfile() {
             </h2>
             <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl p-6 border border-gray-200">
               <p className="text-gray-700 leading-relaxed">
-                {candidate.resume || "This is a dummy resume preview. The candidate has experience building frontend applications using React, Tailwind CSS, and modern JavaScript frameworks. Previously worked on SaaS dashboards and recruiter-facing tools."}
+                {candidate.resume ||
+                  "This is a dummy resume preview. The candidate has experience building frontend applications using React, Tailwind CSS, and modern JavaScript frameworks. Previously worked on SaaS dashboards and recruiter-facing tools."}
               </p>
             </div>
           </div>
         </motion.div>
 
-        {/* ================= VIDEO SCREENING ================= */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -122,22 +123,21 @@ export default function CandidateProfile() {
               <span className="text-2xl">🎬</span>
               Video Screening
             </h2>
-          <VideoScreening
-  onSubmit={({ decision, notes }) => {
-    dispatch(
-      addAuditLog({
-        jobId,
-        message: `Video screening result: ${decision} for ${candidate.name}${
-          notes ? ` — Notes: ${notes}` : ""
-        }`,
-      })
-    );
-  }}
-/>
+            <VideoScreening
+              onSubmit={({ decision, notes }) => {
+                dispatch(
+                  addAuditLog({
+                    jobId,
+                    message: `Video screening result: ${decision} for ${candidate.name}${
+                      notes ? ` — Notes: ${notes}` : ""
+                    }`,
+                  }),
+                );
+              }}
+            />
           </div>
         </motion.div>
 
-        {/* ================= AI SCREENING SUMMARY ================= */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -145,7 +145,6 @@ export default function CandidateProfile() {
         >
           <AIScreeningSummary />
         </motion.div>
-
       </div>
     </div>
   );

@@ -36,7 +36,6 @@ export default function AssistantButton({ position, setPosition }) {
     }
   };
 
-  // Listen to mousemove and mouseup on the whole window
   useEffect(() => {
     if (isDragging) {
       window.addEventListener("mousemove", handleMouseMove);
@@ -61,7 +60,7 @@ export default function AssistantButton({ position, setPosition }) {
       style={{
         position: "fixed",
         left: `${position.x}px`,
-        top: `${position.y}px`, 
+        top: `${position.y}px`,
         cursor: isDragging ? "grabbing" : "grab",
         zIndex: 50,
         transform: isHovered && !isDragging ? "scale(1.1)" : "scale(1)",

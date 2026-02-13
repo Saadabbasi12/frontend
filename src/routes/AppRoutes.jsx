@@ -10,7 +10,7 @@ function AppRoutes() {
       <Routes>
         <Route path="/" element={<Home />} />
 
-        {/* Recruiter workspace */}
+       
         <Route path="/recruiter/jobs" element={<Jobs />} />
         <Route path="/recruiter/jobs/:id" element={<JobDetails />} />
         <Route path="/recruiter/candidate/:id" element={<CandidateProfile />} />
